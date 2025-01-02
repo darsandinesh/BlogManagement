@@ -11,6 +11,8 @@ const transporter = nodemailer.createTransport({
 
 
 export const sendEmailVerification = async (to: string): Promise<void> => {
+
+    const verificationLink = `https://blog-management-jet.vercel.app/email/${to}`;
     const mailOptions = {
         from: config.EMAIL,
         to: to,
@@ -114,10 +116,10 @@ export const sendEmailVerification = async (to: string): Promise<void> => {
                     <p>Hello,</p>
                     <p>Thank you for registering with us! To complete your registration and activate your account, please click the button below to verify your email address.</p>
 
-                    <a target="_blank" href="blog-management-jet.vercel.app/email/${to}" class="verify-button" style='color:white'>Verify Email</a>
+                    <a target="_blank" href="${verificationLink}" class="verify-button" style='color:white'>Verify Email</a>
 
                     <p>If the button above doesn't work, please copy and paste the following URL into your web browser:</p>
-                    <p><a target="_blank" href="blog-management-jet.vercel.app/email/${to}">blog-management-jet.vercel.app/email/${to}</a></p>
+                    <p><a target="_blank" href="${verificationLink}">"${verificationLink}"</a></p>
 
 
                     <p style='color:red'><strong>Note:</strong> This link will expire in 30 minutes.</p>
@@ -151,6 +153,7 @@ export const sendEmailVerification = async (to: string): Promise<void> => {
 
 
 export const sendForgotPasswordEmail = async (to: string): Promise<void> => {
+    const verificationLink = `https://blog-management-jet.vercel.app/email/${to}`;
     const mailOptions = {
         from: config.EMAIL,
         to: to,
@@ -254,10 +257,10 @@ export const sendForgotPasswordEmail = async (to: string): Promise<void> => {
                     <p>Hello,</p>
                     <p>We received a request to reset the password for your account. If you made this request, please click the button below to reset your password.</p>
 
-                    <a target="_blank" href="blog-management-jet.vercel.app/reset-password/${to}" class="reset-button" style='color:white'>Reset Password</a>
+                    <a target="_blank" href="${verificationLink}" class="reset-button" style='color:white'>Reset Password</a>
 
                     <p>If the button above doesn't work, please copy and paste the following URL into your web browser:</p>
-                    <p><a target="_blank" href="blog-management-jet.vercel.app/reset-password/${to}">blog-management-jet.vercel.app/reset-password/${to}</a></p>
+                    <p><a target="_blank" href="${verificationLink}">${verificationLink}</a></p>
 
                     <p>If you did not request a password reset, please ignore this email.</p>
                 </div>
