@@ -153,7 +153,7 @@ export const sendEmailVerification = async (to: string): Promise<void> => {
 
 
 export const sendForgotPasswordEmail = async (to: string): Promise<void> => {
-    const verificationLink = `http://localhost:5173/email/${to}`;
+    const verificationLink = `https://blog-management-jet.vercel.app/email/${to}`;
     const mailOptions = {
         from: config.EMAIL,
         to: to,
