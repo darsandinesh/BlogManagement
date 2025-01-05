@@ -31,7 +31,7 @@ export class AuthService {
                 password: hashedPassword
             };
 
-            const tempUser: any = await this.authRepo.createTempUser(tempUserData);
+            const tempUser = await this.authRepo.createTempUser(tempUserData);
 
             if (tempUser) {
                 try {

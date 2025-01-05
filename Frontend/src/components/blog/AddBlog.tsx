@@ -175,7 +175,7 @@ const AddBlog = () => {
                                     <option value="technology">Technology</option>
                                     <option value="lifestyle">Lifestyle</option>
                                     <option value="travel">Travel</option>
-                                    <option value="travel">Other</option>
+                                    <option value="Other">Other</option>
                                 </select>
                                 {errors.category && (
                                     <p className="text-red-500 text-sm mt-1">{errors.category}</p>
